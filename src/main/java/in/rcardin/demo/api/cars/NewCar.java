@@ -3,30 +3,23 @@ package in.rcardin.demo.api.cars;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Car {
-  private final String id;
+public class NewCar {
   private final String model;
-  private final String vendor;
+  private final String brand;
   
   @JsonCreator
-  public Car(
-      @JsonProperty("id") String id,
+  public NewCar(
       @JsonProperty("model") String model,
-      @JsonProperty("vendor") String vendor) {
-    this.id = id;
+      @JsonProperty("brand") String brand) {
     this.model = model;
-    this.vendor = vendor;
-  }
-  
-  public String getId() {
-    return id;
+    this.brand = brand;
   }
   
   public String getModel() {
     return model;
   }
   
-  public String getVendor() {
-    return vendor;
+  public String getBrand() {
+    return brand;
   }
 }
