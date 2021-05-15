@@ -2,24 +2,18 @@ package in.rcardin.demo.api.cars;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.NotBlank;
 
-public class Car {
-  private final String id;
+public class CarUpdates {
   private final String model;
   private final String brand;
   
   @JsonCreator
-  public Car(
-      @JsonProperty("id") String id,
-      @JsonProperty("model") String model,
-      @JsonProperty("brand") String brand) {
-    this.id = id;
+  public CarUpdates(
+      @NotBlank @JsonProperty("model") String model,
+      @NotBlank @JsonProperty("brand") String brand) {
     this.model = model;
     this.brand = brand;
-  }
-  
-  public String getId() {
-    return id;
   }
   
   public String getModel() {

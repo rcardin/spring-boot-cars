@@ -2,6 +2,7 @@ package in.rcardin.demo.api.cars;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.NotBlank;
 
 public class NewCar {
   private final String model;
@@ -9,8 +10,8 @@ public class NewCar {
   
   @JsonCreator
   public NewCar(
-      @JsonProperty("model") String model,
-      @JsonProperty("brand") String brand) {
+      @NotBlank @JsonProperty("model") String model,
+      @NotBlank @JsonProperty("brand") String brand) {
     this.model = model;
     this.brand = brand;
   }
