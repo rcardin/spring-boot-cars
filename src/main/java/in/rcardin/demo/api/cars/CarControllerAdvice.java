@@ -22,7 +22,7 @@ public class CarControllerAdvice {
     );
   }
   
-  @ExceptionHandler(value = {NoSuchElementException.class})
+  @ExceptionHandler(value = {MethodArgumentNotValidException.class})
   @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorMessage handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
     return new ErrorMessage(
