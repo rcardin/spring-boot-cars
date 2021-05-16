@@ -7,20 +7,20 @@ import javax.validation.constraints.NotBlank;
 public class CarUpdates {
   private final String model;
   private final String brand;
-  
+
   @JsonCreator
   public CarUpdates(
       @JsonProperty("brand") String brand,
-    @JsonProperty("model") String model) {
+      @JsonProperty("model") String model) {
     this.model = model;
     this.brand = brand;
   }
-  
+
   @NotBlank
   public String getModel() {
     return model;
   }
-  
+
   @NotBlank
   public String getBrand() {
     return brand;
