@@ -21,7 +21,7 @@ public class CarService {
    */
   public Car create(String brand, String model) {
     final String carId = UUID.randomUUID().toString();
-    final Car car = new Car(carId, model, brand);
+    final Car car = new Car(carId, brand, model);
     cars.put(carId, car);
     return car;
   }

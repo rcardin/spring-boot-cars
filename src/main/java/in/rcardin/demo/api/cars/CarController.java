@@ -61,7 +61,7 @@ public class CarController {
       consumes = MediaType.APPLICATION_JSON_VALUE,
       produces = MediaType.APPLICATION_JSON_VALUE)
   public Car update(@PathVariable String id, @Valid @RequestBody CarUpdates carUpdates) {
-    return service.update(new Car(id, carUpdates.getModel(), carUpdates.getBrand()));
+    return service.update(new Car(id, carUpdates.getBrand(), carUpdates.getModel()));
   }
 
   @DeleteMapping("/{id}")

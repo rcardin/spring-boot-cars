@@ -10,16 +10,17 @@ public class NewCar {
   
   @JsonCreator
   public NewCar(
-      @NotBlank @JsonProperty("model") String model,
-      @NotBlank @JsonProperty("brand") String brand) {
+      @JsonProperty("model") String model,
+      @JsonProperty("brand") String brand) {
     this.model = model;
     this.brand = brand;
   }
   
+  @NotBlank
   public String getModel() {
     return model;
   }
-  
+  @NotBlank
   public String getBrand() {
     return brand;
   }
